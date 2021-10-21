@@ -72,6 +72,8 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = 'app_PF.Usuario'
+
 ROOT_URLCONF = 'authProject.urls'
 
 TEMPLATES = [
