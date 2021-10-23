@@ -30,5 +30,4 @@ class UsuarioSerializer(serializers.ModelSerializer):
                     'isActive': account.isActive
                 }
         }
-        
-    
+     
