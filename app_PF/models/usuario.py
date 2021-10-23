@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.contrib.auth.hashers import make_password
 
 class userManager(BaseUserManager):
-    def crear_usuario(self,nombreusuario, contra=None):
+    def crear_usuario(self, nombreusuario, contra=None):
         if not nombreusuario:
             raise ValueError ("El usuario debe tener un nombre")
         usuario = self.model(nombreusuario=nombreusuario)
@@ -23,7 +23,7 @@ class userManager(BaseUserManager):
 class Usuario(AbstractBaseUser,PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
     nombreusuario = models.CharField('nombreusuario', max_length = 15, unique=True)
-    contra = models.CharField('Contraseña', max_length=256)
+    contraseña = models.CharField('Contraseña', max_length=256)
     nombre = models.CharField('Nombre',max_length=30)
     correo = models.EmailField('Correo', max_length=100)
 
